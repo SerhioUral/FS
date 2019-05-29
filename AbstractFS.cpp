@@ -1,6 +1,7 @@
 #include "AbstractFS.h"
 #include <string>
 #include <iostream>
+#include <iomanip>
 
 AbstractFS::AbstractFS(HANDLE fileHandle)
 {
@@ -37,7 +38,7 @@ void AbstractFS::ShowBuffer()
 	for (ULONGLONG i = 0; i < BytesRead; i++)
 	{
 
-		cout << hex << (DWORD)Buffer[i] << " ";
+		cout << hex << setw(2) << setfill('0') << (DWORD)Buffer[i] << " ";
 	}
 
 }

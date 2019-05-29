@@ -13,9 +13,17 @@ int main()
 	cout << "Введите номер кластера: ";
 	cin >> Number;
 	Iterator iterator = FactoryMethod::GetIterator(FS);
+	Decorator decorator(&iterator);
+	//if (Number < FS->GetTotalClusters()) {
+	//	for (iterator.First(); iterator.GetPosition() < Number; iterator.Next());
+	//	iterator.GetCurrent();
+	//}
+	//else {
+	//	cout << "Слишком большое число." << endl;
+	//}
 	if (Number < FS->GetTotalClusters()) {
-		for (iterator.First(); iterator.GetPosition() < Number; iterator.Next());
-		iterator.GetCurrent();
+		for (decorator.First(); decorator.GetPosition() < Number; decorator.Next());
+		decorator.GetCurrent();
 	}
 	else {
 		cout << "Слишком большое число." << endl;

@@ -6,6 +6,16 @@ Iterator::Iterator(AbstractFS *fileSystem)
 	currentOffset = 0;
 }
 
+Iterator::Iterator()
+{
+
+}
+
+Iterator::Iterator(Iterator *it)
+{
+	this->FS = it->FS;
+	this->currentOffset = it->currentOffset;
+}
 void Iterator::First()
 {
 	currentOffset = 0;

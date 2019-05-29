@@ -8,6 +8,8 @@ protected:
 	ULONGLONG currentOffset;
 public:
 	Iterator(AbstractFS *fileSystem);
+	Iterator();
+	Iterator::Iterator(Iterator *it);
 	void First();
 	void Next();
 	bool IsDone();
